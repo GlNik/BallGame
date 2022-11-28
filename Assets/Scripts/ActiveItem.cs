@@ -3,16 +3,14 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class ActiveItem : MonoBehaviour
+public class ActiveItem : Item
 {
     public int Level;
     public float Radius;
-    [SerializeField] protected TextMeshProUGUI LevelText;
-
-    [SerializeField] private Transform _visualTransform;
-    [SerializeField] private SphereCollider _collider;
-    [SerializeField] private SphereCollider _trigger;
-    [SerializeField] private Animator _animator;
+    [SerializeField] protected TextMeshProUGUI LevelText;  
+    [SerializeField] protected SphereCollider Collider;
+    [SerializeField] protected SphereCollider Trigger;
+    [SerializeField] protected Animator AnimatorItem;
 
     public Projection Projection;
     public Rigidbody Rigidbody;
@@ -20,7 +18,7 @@ public class ActiveItem : MonoBehaviour
 
     [ContextMenu("IncreaseLevel")]
 
-    private void Start()
+    protected virtual void Start()
     {
         Projection.Hide();
     }
@@ -29,9 +27,9 @@ public class ActiveItem : MonoBehaviour
     {
         Level++;
         SetLevel(Level);
-        _animator.SetTrigger("IncreaseLevel");
+        AnimatorItem.SetTrigger("IncreaseLevel");
 
-        _trigger.enabled = false;
+        Trigger.enabled = false;
         Invoke(nameof(EnabelTrigger), 0.08f);
     }
 
@@ -43,30 +41,30 @@ public class ActiveItem : MonoBehaviour
         string numberString = number.ToString();
         LevelText.text = numberString;
 
-        Radius = Mathf.Lerp(0.4f, 0.7f, level / 10f);
-        Vector3 ballScale = Vector3.one * Radius * 2f;
-        _visualTransform.localScale = ballScale;
-        _collider.radius = Radius;
-        _trigger.radius = Radius + 0.1f;
+        //Radius = Mathf.Lerp(0.4f, 0.7f, level / 10f);
+        //Vector3 ballScale = Vector3.one * Radius * 2f;
+        //_visualTransform.localScale = ballScale;
+        //_collider.radius = Radius;
+        //_trigger.radius = Radius + 0.1f;
     }
 
     private void EnabelTrigger()
     {
-        _trigger.enabled = true;
+        Trigger.enabled = true;
     }
 
     public void SetupToTube()
     {
-        _trigger.enabled = false;
-        _collider.enabled = false;
+        Trigger.enabled = false;
+        Collider.enabled = false;
         Rigidbody.isKinematic = true;
         Rigidbody.interpolation = RigidbodyInterpolation.None;
     }
 
     public void Drop()
     {
-        _trigger.enabled = true;
-        _collider.enabled = true;
+        Trigger.enabled = true;
+        Collider.enabled = true;
         Rigidbody.isKinematic = false;
         Rigidbody.interpolation = RigidbodyInterpolation.Interpolate;
 
@@ -89,11 +87,16 @@ public class ActiveItem : MonoBehaviour
         }
     }
 
+    public virtual void DoEffect()
+    {
+
+    }
+
     public void Disable()
     {
-        _trigger.enabled = false;
+        Trigger.enabled = false;
         Rigidbody.isKinematic = true;
-        _collider.enabled = false;
+        Collider.enabled = false;
         IsDead = true;
     }
 

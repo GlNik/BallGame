@@ -609,18 +609,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0da65a3f0c7e2a4ab733285373dd2b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ItemType: 1
   Level: 0
   Radius: 0.4
   LevelText: {fileID: 5107982998634364474}
-  _visualTransform: {fileID: 5107982998450637529}
-  _collider: {fileID: 5107982998239454596}
-  _trigger: {fileID: 5107982997503587557}
-  _animator: {fileID: 1662158896432364707}
+  Collider: {fileID: 5107982998239454596}
+  Trigger: {fileID: 5107982997503587557}
+  AnimatorItem: {fileID: 1662158896432364707}
   Projection: {fileID: 5111909396808849903}
   Rigidbody: {fileID: 5107982998927603755}
   IsDead: 0
   _ballSettings: {fileID: 11400000, guid: 99afce833dbf40b4bba5910c60e1a6d2, type: 2}
   _renderer: {fileID: 5107982998688456838}
+  _visualTransform: {fileID: 5107982998450637529}
 --- !u!1 &5174551102031385185
 GameObject:
   m_ObjectHideFlags: 0
