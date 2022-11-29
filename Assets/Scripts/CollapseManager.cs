@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UIElements;
 
 public class CollapseManager : MonoBehaviour
 {
     public static CollapseManager Instance { get; private set; }
+
+    public UnityEvent OnCollapse;
 
     private void Awake()
     {
@@ -64,6 +67,7 @@ public class CollapseManager : MonoBehaviour
             Vector3 startPosition = fromItem.transform.position;
             for (float t = 0; t < 1f; t += Time.deltaTime / 0.08f)
             {
+                // ругается почему то
                 fromItem.transform.position = Vector3.Lerp(startPosition, toItem.transform.position, t);
                 yield return null;
             }
@@ -97,6 +101,8 @@ public class CollapseManager : MonoBehaviour
             }
         }
 
+        OnCollapse.Invoke();
+
     }
 
     public void ExplodeBall(Vector3 position, float radius)
@@ -111,7 +117,6 @@ public class CollapseManager : MonoBehaviour
             }
             if (passiveItem)
             {
-
                 passiveItem.OnAffect();
             }
         }
