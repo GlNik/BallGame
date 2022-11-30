@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class Creator : MonoBehaviour
@@ -78,7 +79,7 @@ public class Creator : MonoBehaviour
                 _itemInSpawner.Projection.SetPosition(_spawner.position + Vector3.down * hit.distance);
             }
 
-            if (Input.GetMouseButtonUp(0))
+            if (Input.GetMouseButtonUp(0) /*&& !EventSystem.current.IsPointerOverGameObject()*/)
             {
                 Drop();
             }

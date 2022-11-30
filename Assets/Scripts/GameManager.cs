@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -28,6 +30,9 @@ public class GameManager : MonoBehaviour
     {
         _winObject.SetActive(true);
         OnWin.Invoke();
+        int currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
+        Progress.Instance.SetLevel(currentLevelIndex + 1);
+        Progress.Instance.Coins += 50;
     }
 
     public void Lose()
@@ -35,6 +40,20 @@ public class GameManager : MonoBehaviour
         _loseObject.SetActive(true);
     }
 
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(Progress.Instance.Level);
+    }
+
+    public void ToMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 
     private void OnDestroy()
     {

@@ -1,10 +1,24 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    public void StartGame()
+    [SerializeField] private Text _coinsText;
+    [SerializeField] private Text _levelText;
+
+    [SerializeField] private Button _startButton;
+
+    private void Start()
     {
-        SceneManager.LoadScene("Level 1");
-    }   
+        _coinsText.text = "Coins: " + Progress.Instance.Coins;
+        _levelText.text = "Level: " + Progress.Instance.Level;
+        _startButton.onClick.AddListener(StartLevel);
+    }
+
+    private void StartLevel()
+    {
+        SceneManager.LoadScene(Progress.Instance.Level);
+    }
+
 }
