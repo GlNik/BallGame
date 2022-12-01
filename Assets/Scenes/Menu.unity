@@ -1703,6 +1703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Coins: 50
   Level: 1
+  IsMusicOn: 0
 --- !u!4 &1132747622
 Transform:
   m_ObjectHideFlags: 0

@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
         OnWin.Invoke();
         int currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
         Progress.Instance.SetLevel(currentLevelIndex + 1);
-        Progress.Instance.Coins += 50;
+        Progress.Instance.AddCoins(50);
     }
 
     public void Lose()
