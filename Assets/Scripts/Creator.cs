@@ -79,7 +79,7 @@ public class Creator : MonoBehaviour
                 _itemInSpawner.Projection.SetPosition(_spawner.position + Vector3.down * hit.distance);
             }
 
-            if (Input.GetMouseButtonUp(0) /*&& !EventSystem.current.IsPointerOverGameObject()*/)
+            if (Input.GetMouseButtonUp(0) && !EventSystem.current.IsPointerOverGameObject())
             {
                 Drop();
             }

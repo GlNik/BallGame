@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Spawner : MonoBehaviour
 {
@@ -9,12 +10,12 @@ public class Spawner : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject() )
         {
             _oldMouseXPosition = Input.mousePosition.x;
         }
 
-        if(Input.GetMouseButton(0))
+        if(Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
         {
             float delta = Input.mousePosition.x - _oldMouseXPosition;
             _oldMouseXPosition = Input.mousePosition.x;
