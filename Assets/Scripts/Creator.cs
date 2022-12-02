@@ -14,6 +14,11 @@ public class Creator : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _numberOfBallsText;
     [SerializeField] private LayerMask _layerMask;
 
+    [Space(5)]
+    [Header("Balls Level")]
+    [Range(1,5)]
+    [SerializeField] private int _itemLevel;    
+
     private ActiveItem _itemInTube;
     private ActiveItem _itemInSpawner;
     private int _ballsLeft;
@@ -41,7 +46,7 @@ public class Creator : MonoBehaviour
             return;
         }
         // назначаем шару случайный уровень
-        int itemLevel = Random.Range(0, 5);
+        int itemLevel = Random.Range(0, _itemLevel);
         _itemInTube = Instantiate(_ballPrefab, _tube.position, Quaternion.identity);
         _itemInTube.SetLevel(itemLevel);
         _itemInTube.SetupToTube();

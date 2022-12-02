@@ -29,7 +29,7 @@ public static class SaveSystem
         }
         else
         {
-            Debug.Log("a kavo? chego?");
+            Debug.Log("нет сохранений");
             return null;
         }
     }
