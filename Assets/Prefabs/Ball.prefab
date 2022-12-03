@@ -1193,6 +1193,8 @@ MonoBehaviour:
   _renderer: {fileID: 5107982998688456838}
   _visualTransform: {fileID: 5107982998450637529}
   _connectClip: {fileID: 2314203746686875693}
+  _connectEffect: {fileID: 31263904472293174, guid: 29c31b9b475128d4f8c0bf8fd3385eee,
+    type: 3}
   "\u0421onnectingBall":
     m_PersistentCalls:
       m_Calls:

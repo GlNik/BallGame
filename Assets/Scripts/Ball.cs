@@ -10,6 +10,7 @@ public class Ball : ActiveItem
     [SerializeField] private Renderer _renderer;
     [SerializeField] private Transform _visualTransform;
     [SerializeField] private AudioSource _connectClip;
+    [SerializeField] private GameObject _connectEffect;
 
     private int _counter;
 
@@ -41,6 +42,7 @@ public class Ball : ActiveItem
         base.DoEffect();
 
         ÑonnectingBall.Invoke();
+        Instantiate(_connectEffect,transform.position,Quaternion.identity);
         IncreaseLevel();
     }
 

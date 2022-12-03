@@ -42,17 +42,21 @@ public class GameManager : MonoBehaviour
 
     public void NextLevel()
     {
-        SceneManager.LoadScene(Progress.Instance.Level);
+        FadeManager.Instance.LoadGameScene();
+        // SceneManager.LoadScene(Progress.Instance.Level);
     }
 
     public void ToMainMenu()
     {
-        SceneManager.LoadScene(0);
+        Time.timeScale = 1;
+        // SceneManager.LoadScene(0);
+        FadeManager.Instance.LoadMainMenu();
     }
 
     public void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        FadeManager.Instance.Restart();
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void OnDestroy()

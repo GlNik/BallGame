@@ -18,7 +18,8 @@ public class MainMenu : MonoBehaviour
 
     private void StartLevel()
     {
-        SceneManager.LoadScene(Progress.Instance.Level);
+        FadeManager.Instance.LoadGameScene();
+        //SceneManager.LoadScene(Progress.Instance.Level);
     }
 
 }
