@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -11,7 +9,8 @@ public class Creator : MonoBehaviour
     [SerializeField] private Transform _spawner;
     [SerializeField] private ActiveItem _ballPrefab;
     [SerializeField] private Transform _rayTransform;
-    [SerializeField] private TextMeshProUGUI _numberOfBallsText;
+    //[SerializeField] private TextMeshProUGUI _numberOfBallsText;
+    [SerializeField] private Text _numberOfBallsText;
     [SerializeField] private LayerMask _layerMask;
 
     [Space(5)]
