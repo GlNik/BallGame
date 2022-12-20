@@ -23,7 +23,7 @@ public class FadeManager : MonoBehaviour
     {
         _fade.alpha = 1;
         HideFade();
-        if(_tween != null)
+        if (_tween != null)
         {
             _tween.Play();
         }
@@ -52,7 +52,14 @@ public class FadeManager : MonoBehaviour
         _tween = _fade.DOFade(1, 1);
         _tween.onComplete += () =>
         {
-            SceneManager.LoadScene(Progress.Instance.Level);
+            if (Progress.Instance.Level==12)
+            {
+                LoadMainMenu();
+            }
+            else
+            {
+                SceneManager.LoadScene(Progress.Instance.Level);
+            }
         };
     }
 
@@ -61,7 +68,7 @@ public class FadeManager : MonoBehaviour
         _tween = _fade.DOFade(1, 1);
         _tween.onComplete += () =>
         {
-            SceneManager.LoadScene(0);            
+            SceneManager.LoadScene(0);
         };
     }
 
@@ -70,7 +77,7 @@ public class FadeManager : MonoBehaviour
         _tween = _fade.DOFade(1, 1);
         _tween.onComplete += () =>
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);           
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         };
     }
 

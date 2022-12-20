@@ -7,7 +7,7 @@ public class ActiveItem : Item
 {
     public int Level;
     public float Radius;
-    [SerializeField] protected TextMeshProUGUI LevelText;  
+    [SerializeField] protected TextMeshProUGUI LevelText;
     [SerializeField] protected SphereCollider Collider;
     [SerializeField] protected SphereCollider Trigger;
     [SerializeField] protected Animator AnimatorItem;
@@ -16,6 +16,8 @@ public class ActiveItem : Item
     public Rigidbody Rigidbody;
     public bool IsDead;
 
+    public bool IsMurge;
+
     [ContextMenu("IncreaseLevel")]
 
     protected virtual void Start()
@@ -23,10 +25,16 @@ public class ActiveItem : Item
         Projection.Hide();
     }
 
+    private void Update()
+    {
+        Rigidbody.WakeUp();
+    }
+
     public void IncreaseLevel()
     {
         Level++;
         SetLevel(Level);
+        IsMurge = false;
         AnimatorItem.SetTrigger("IncreaseLevel");
 
         Trigger.enabled = false;
@@ -81,7 +89,10 @@ public class ActiveItem : Item
             {
                 if (Level == otherItem.Level && otherItem.IsDead == false)
                 {
-                    CollapseManager.Instance.Collapse(this, otherItem);
+                    if (IsMurge == false && otherItem.IsMurge == false)
+                    {
+                        CollapseManager.Instance.Collapse(this, otherItem);
+                    }
                 }
             }
         }

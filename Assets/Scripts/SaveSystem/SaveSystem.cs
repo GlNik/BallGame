@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
@@ -36,12 +34,11 @@ public static class SaveSystem
 
     public static void DeleteFile()
     {
-
         string path = Application.persistentDataPath + "/pleaseDontTouchIt.dude";
         if (File.Exists(path))
         {
             File.Delete(path);
         }
-
     }
+
 }

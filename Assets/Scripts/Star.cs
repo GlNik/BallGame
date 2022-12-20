@@ -10,6 +10,8 @@ public class Star : ActiveItem
     [SerializeField] private GameObject _affectArea;
     [SerializeField] private GameObject _effectPrefab;
 
+    [SerializeField] private LayerMask _layerMask;
+
     protected override void Start()
     {
         base.Start();
@@ -22,7 +24,7 @@ public class Star : ActiveItem
         AnimatorItem.enabled = true;
         yield return new WaitForSeconds(1f);
 
-        Collider[] colliders = Physics.OverlapSphere(transform.position, _affectRadius);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, _affectRadius, _layerMask,QueryTriggerInteraction.Ignore);
         for (int i = 0; i < colliders.Length; i++)
         {
             if (colliders[i].attachedRigidbody)

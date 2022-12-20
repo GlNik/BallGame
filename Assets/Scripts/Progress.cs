@@ -63,9 +63,12 @@ public class Progress : MonoBehaviour
     [ContextMenu("Reset")]
     public void DeleteFile()
     {
-        SaveSystem.DeleteFile();
+        Coins = 0;
+        Level = 1;
+        IsMusicOn = true;
+        Save();
+        // SaveSystem.DeleteFile();
     }
-
 
     private void OnDestroy()
     {

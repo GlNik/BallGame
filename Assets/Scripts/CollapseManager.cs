@@ -23,6 +23,9 @@ public class CollapseManager : MonoBehaviour
     }
     public void Collapse(ActiveItem itemA, ActiveItem itemB)
     {
+        itemA.IsMurge = true;
+        itemB.IsMurge = true;
+
         ActiveItem toItem;
         ActiveItem fromItem;
         // если высота шаров по у отличается больше чем на 0.02а

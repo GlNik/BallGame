@@ -63,8 +63,17 @@ public class ScoreManager : MonoBehaviour
         GameObject icon = Instantiate(scoreElement.FlyingIconPrefab, position, Quaternion.identity);
         Vector3 a = position;
         Vector3 b = position + Vector3.back * 6.5f + Vector3.down * 5f;
+        //
+        Ray ray = new Ray(Camera.main.transform.position, scoreElement.IconTransform.position - Camera.main.transform.position);
+        Plane plane = new Plane(Vector3.forward, 0f);
+        Vector3 projection = Vector3.zero;
+        if(plane.Raycast(ray, out float distance))
+        {
+            projection = ray.GetPoint(distance);
+        }
+        //
         Vector3 screenPosition = new Vector3(scoreElement.IconTransform.position.x, scoreElement.IconTransform.position.y, -_camera.transform.position.z);
-        Vector3 d = _camera.ScreenToWorldPoint(screenPosition);
+        Vector3 d = projection - new Vector3(1,1,0);//_camera.ScreenToWorldPoint(screenPosition);
         Vector3 c = d + Vector3.back * 6f;
 
         for (float t = 0; t < 1f; t += Time.deltaTime)
