@@ -316,6 +316,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8784202585152175640, guid: f7e8c2bafb3fc2c42acfe9ba422bcf9a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: f7e8c2bafb3fc2c42acfe9ba422bcf9a, type: 3}
@@ -430,12 +435,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd0b746319b08c4c93ec14eb545be77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfBalls: 50
+  NumberOfBalls: 100
   MaxCreatedBallLevel: 1
   Tasks:
   - ItemType: 1
     Number: 1
-    Level: 6
+    Level: 7
 --- !u!4 &1218829592
 Transform:
   m_ObjectHideFlags: 0
@@ -669,6 +674,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -86.400024
+      objectReference: {fileID: 0}
+    - target: {fileID: 1441864789685558099, guid: 965b8a6b9f85da347a3ecf35322f7157,
+        type: 3}
+      propertyPath: _maxXPosition
+      value: 2.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 1441864790386612763, guid: 965b8a6b9f85da347a3ecf35322f7157,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0.28378907
+      objectReference: {fileID: 0}
+    - target: {fileID: 1441864790386612763, guid: 965b8a6b9f85da347a3ecf35322f7157,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 0.43242186
       objectReference: {fileID: 0}
     - target: {fileID: 1441864791306250348, guid: 965b8a6b9f85da347a3ecf35322f7157,
         type: 3}

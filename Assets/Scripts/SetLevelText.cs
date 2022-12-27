@@ -8,7 +8,5 @@ public class SetLevelText : MonoBehaviour
     void Start()
     {
         _levelText.text = "Level " + Progress.Instance.Level;
-    }
-
-   
+    } 
 }

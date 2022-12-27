@@ -392,7 +392,7 @@ MonoBehaviour:
     Number: 1
     Level: 6
   - ItemType: 3
-    Number: 3
+    Number: 12
     Level: 0
 --- !u!4 &1218829592
 Transform:
@@ -584,12 +584,12 @@ PrefabInstance:
     - target: {fileID: 1441864790386612763, guid: 965b8a6b9f85da347a3ecf35322f7157,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0.11713287
+      value: 0.28378907
       objectReference: {fileID: 0}
     - target: {fileID: 1441864790386612763, guid: 965b8a6b9f85da347a3ecf35322f7157,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.76573426
+      value: 0.43242186
       objectReference: {fileID: 0}
     - target: {fileID: 1441864791306250348, guid: 965b8a6b9f85da347a3ecf35322f7157,
         type: 3}

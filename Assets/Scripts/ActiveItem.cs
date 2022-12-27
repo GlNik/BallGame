@@ -23,12 +23,13 @@ public class ActiveItem : Item
     protected virtual void Start()
     {
         Projection.Hide();
+        StartCoroutine(WakeUp());
     }
 
-    private void Update()
-    {
-        Rigidbody.WakeUp();
-    }
+    //private void Update()
+    //{
+    //    Rigidbody.WakeUp();
+    //}
 
     public void IncreaseLevel()
     {
@@ -100,6 +101,17 @@ public class ActiveItem : Item
 
     public virtual void DoEffect()
     {
+
+    }
+
+
+    IEnumerator WakeUp()
+    {
+        while (true)
+        {
+            Rigidbody.WakeUp();
+            yield return new WaitForSeconds(0.3f);
+        }
 
     }
 

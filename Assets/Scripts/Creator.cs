@@ -9,21 +9,21 @@ public class Creator : MonoBehaviour
     [SerializeField] private Transform _spawner;
     [SerializeField] private ActiveItem _ballPrefab;
     [SerializeField] private Transform _rayTransform;
-    //[SerializeField] private TextMeshProUGUI _numberOfBallsText;
     [SerializeField] private Text _numberOfBallsText;
     [SerializeField] private LayerMask _layerMask;
 
     [Space(5)]
     [Header("Balls Level")]
-    [Range(1,5)]
-    [SerializeField] private int _itemLevel;    
+    [Range(1, 5)]
+    [SerializeField] private int _itemLevel;
 
     private ActiveItem _itemInTube;
     private ActiveItem _itemInSpawner;
-    private int _ballsLeft;
     private Coroutine _waitForLose;
 
-    void Start()
+    private int _ballsLeft;
+
+    private void Start()
     {
         _ballsLeft = Level.Instance.NumberOfBalls;
         UpdateBallsLeftText();
@@ -70,6 +70,14 @@ public class Creator : MonoBehaviour
         CreateItemInTube();
     }
 
+    public void AddBallToSpawner()
+    {
+        _ballsLeft += 5;
+        //StopWaitForLose();
+        UpdateBallsLeftText();
+        CreateItemInTube();
+        StartCoroutine(MoveToSpawner());
+    }
 
     private void LateUpdate()
     {
@@ -96,12 +104,14 @@ public class Creator : MonoBehaviour
         _itemInSpawner.Projection.Hide();
         _itemInSpawner = null;
         _rayTransform.gameObject.SetActive(false);
+
         if (_itemInTube)
         {
             StartCoroutine(MoveToSpawner());
         }
         else
         {
+            Debug.Log("startlose");
             _waitForLose = StartCoroutine(WaitForLose());
             CollapseManager.Instance.OnCollapse.AddListener(ResetLoseTimer);
             GameManager.Instance.OnWin.AddListener(StopWaitForLose);
@@ -112,6 +122,7 @@ public class Creator : MonoBehaviour
     {
         if (_waitForLose != null)
         {
+            Debug.Log("ResetLoseTimer");
             StopCoroutine(_waitForLose);
             _waitForLose = StartCoroutine(WaitForLose());
         }
@@ -121,16 +132,19 @@ public class Creator : MonoBehaviour
     {
         if (_waitForLose != null)
         {
+            Debug.Log("StopWaitForLose");
             StopCoroutine(_waitForLose);
         }
     }
 
-    IEnumerator WaitForLose()
+    private IEnumerator WaitForLose()
     {
         for (float t = 0; t < 5f; t += Time.deltaTime)
         {
             yield return null;
         }
+        Debug.Log("Lose");
+        CollapseManager.Instance.OnCollapse?.RemoveListener(ResetLoseTimer);
         GameManager.Instance.Lose();
     }
 

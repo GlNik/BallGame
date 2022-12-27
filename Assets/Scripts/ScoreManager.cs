@@ -73,7 +73,7 @@ public class ScoreManager : MonoBehaviour
         }
         //
         Vector3 screenPosition = new Vector3(scoreElement.IconTransform.position.x, scoreElement.IconTransform.position.y, -_camera.transform.position.z);
-        Vector3 d = projection - new Vector3(1,1,0);//_camera.ScreenToWorldPoint(screenPosition);
+        Vector3 d = projection - new Vector3(0.5f,0.5f,0);//_camera.ScreenToWorldPoint(screenPosition);
         Vector3 c = d + Vector3.back * 6f;
 
         for (float t = 0; t < 1f; t += Time.deltaTime)

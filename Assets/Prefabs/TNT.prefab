@@ -681,8 +681,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.4
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.4520896
+  m_Center: {x: 0, y: 0.0097667575, z: 0}
 --- !u!1 &3205790269961939955
 GameObject:
   m_ObjectHideFlags: 0
@@ -718,7 +718,7 @@ Transform:
   - {fileID: 3205790267995318064}
   - {fileID: 5645514308214818098}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &3205790269961939965
 Rigidbody:
@@ -758,6 +758,7 @@ MonoBehaviour:
   Projection: {fileID: 3201871016723319353}
   Rigidbody: {fileID: 3205790269961939965}
   IsDead: 0
+  IsMurge: 0
   _affectRadius: 2.5
   _forceValue: 350
   _affectArea: {fileID: 1952776181802332627}

@@ -338,7 +338,7 @@ Transform:
   - {fileID: 5688615636775681993}
   - {fileID: 3231229179139415499}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &5688615637090366212
 Rigidbody:
@@ -378,6 +378,7 @@ MonoBehaviour:
   Projection: {fileID: 5683560536836756160}
   Rigidbody: {fileID: 5688615637090366212}
   IsDead: 0
+  IsMurge: 0
   _affectRadius: 2.2
   _affectArea: {fileID: 8761439838316996906}
   _effectPrefab: {fileID: 8550051998276758377, guid: 6f14ea3b4707b0f43a7d2a7dd397992e,
@@ -428,7 +429,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.42856178
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5688615637904356635
 GameObject:
