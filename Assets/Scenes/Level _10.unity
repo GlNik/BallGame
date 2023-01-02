@@ -614,8 +614,8 @@ MonoBehaviour:
   MaxCreatedBallLevel: 1
   Tasks:
   - ItemType: 1
-    Number: 1
-    Level: 8
+    Number: 2
+    Level: 7
   - ItemType: 2
     Number: 4
     Level: 0
@@ -970,12 +970,12 @@ PrefabInstance:
     - target: {fileID: 1441864790386612763, guid: 965b8a6b9f85da347a3ecf35322f7157,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0.28378907
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1441864790386612763, guid: 965b8a6b9f85da347a3ecf35322f7157,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.43242186
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1441864791306250348, guid: 965b8a6b9f85da347a3ecf35322f7157,
         type: 3}

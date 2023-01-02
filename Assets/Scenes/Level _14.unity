@@ -610,6 +610,9 @@ MonoBehaviour:
   - ItemType: 4
     Number: 10
     Level: 0
+  - ItemType: 1
+    Number: 1
+    Level: 6
 --- !u!4 &1218829592
 Transform:
   m_ObjectHideFlags: 0

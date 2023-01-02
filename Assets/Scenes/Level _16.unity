@@ -516,7 +516,7 @@ MonoBehaviour:
     Number: 36
     Level: 0
   - ItemType: 1
-    Number: 2
+    Number: 3
     Level: 6
 --- !u!4 &1218829592
 Transform:
