@@ -52,7 +52,7 @@ public class FadeManager : MonoBehaviour
         _tween = _fade.DOFade(1, 1);
         _tween.onComplete += () =>
         {
-            if (Progress.Instance.Level==12)
+            if (Progress.Instance.Level==22)
             {
                 LoadMainMenu();
             }

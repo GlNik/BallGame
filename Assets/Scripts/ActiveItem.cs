@@ -24,6 +24,7 @@ public class ActiveItem : Item
     {
         Projection.Hide();
         StartCoroutine(WakeUp());
+        SetLevel(Level);
     }
 
     //private void Update()
