@@ -11,6 +11,8 @@ public class Creator : MonoBehaviour
     [SerializeField] private Transform _rayTransform;
     [SerializeField] private Text _numberOfBallsText;
     [SerializeField] private LayerMask _layerMask;
+    [SerializeField] private GameObject _LoseWindow;
+
 
     [Space(5)]
     [Header("Balls Level")]
@@ -72,11 +74,13 @@ public class Creator : MonoBehaviour
 
     public void AddBallToSpawner()
     {
+        _LoseWindow.SetActive(false);
         _ballsLeft += 5;
         //StopWaitForLose();
         UpdateBallsLeftText();
         CreateItemInTube();
         StartCoroutine(MoveToSpawner());
+
     }
 
     private void LateUpdate()

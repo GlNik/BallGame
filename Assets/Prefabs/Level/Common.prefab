@@ -1219,6 +1219,50 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &230822145747069294
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2286156410965559953}
+  - component: {fileID: 4408718464025888952}
+  m_Layer: 0
+  m_Name: ADS
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2286156410965559953
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230822145747069294}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1441864791306250348}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4408718464025888952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230822145747069294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e85d1e1e8425a944c96d1565982ee958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1316963644861696070
 GameObject:
   m_ObjectHideFlags: 0
@@ -2455,6 +2499,7 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 2147483647
+  _LoseWindow: {fileID: 1441864790637868550}
   _itemLevel: 5
 --- !u!1 &1441864790186155159
 GameObject:
@@ -2830,9 +2875,9 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.3518607
+    x: 0.36268526
     y: 0
-    width: 0.29627863
+    width: 0.27462947
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -4027,6 +4072,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1441864791306250348}
+  - component: {fileID: 2439350055463094623}
   m_Layer: 0
   m_Name: Common
   m_TagString: Untagged
@@ -4061,9 +4107,22 @@ Transform:
   - {fileID: 168298364}
   - {fileID: 6300210993767672492}
   - {fileID: 6177993880366548448}
+  - {fileID: 2286156410965559953}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2439350055463094623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441864791306250349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19fd08d0ce2f5114fb578ed1ecf1d063, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1441864791330756664
 GameObject:
   m_ObjectHideFlags: 0
@@ -6451,10 +6510,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1441864790637868550}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 2439350055463094623}
+        m_TargetAssemblyTypeName: StopMusic, Assembly-CSharp
+        m_MethodName: MusicPause
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6463,17 +6522,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 7468015530108621300}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 4408718464025888952}
+        m_TargetAssemblyTypeName: FullScreenADS, Assembly-CSharp
+        m_MethodName: ShowRewardedVideo
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &5839110235987804901
 GameObject:

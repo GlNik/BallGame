@@ -54,4 +54,15 @@ public class SoundSettingGame : MonoBehaviour
         }
     }
 
+
+    public void MusicPlay()
+    {
+        MusicVolume = PlayerPrefs.GetFloat("MusicVolume", 0.05f);
+    }
+
+    public void MusicPause()
+    {
+        MusicVolume = 0f;
+    }
+
 }
