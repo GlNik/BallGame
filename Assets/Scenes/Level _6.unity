@@ -290,7 +290,7 @@ PrefabInstance:
     - target: {fileID: 7280531262792392555, guid: 430fcd2e644f9e546808c5102d021ab1,
         type: 3}
       propertyPath: Level
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -388,7 +388,7 @@ PrefabInstance:
     - target: {fileID: 3205790269961939952, guid: d512876ddefedbc47bfc11b5b5f5f141,
         type: 3}
       propertyPath: Level
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3205790269961939955, guid: d512876ddefedbc47bfc11b5b5f5f141,
         type: 3}

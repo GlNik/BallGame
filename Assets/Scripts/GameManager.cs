@@ -1,7 +1,4 @@
 using Assets.SimpleLocalization;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -16,13 +13,13 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance { get; private set; }
     [SerializeField] private Text _levelText;
-    public void ChangeLevelText() => _levelText.text = LocalizationManager.Localize("Game.LevelText", (Progress.Instance.Level).ToString("0"));
+    public void ChangeLevelText() => _levelText.text = LocalizationManager.Localize("Game.LevelText", (Progress.Instance.Level).ToString("0"));// Progress.Instance.Level.ToString("0");
 
     private void Awake()
     {
         if (Instance == null)
         {
-            Instance = this;
+            Instance = this;          
         }
         else
         {
@@ -32,8 +29,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        ChangeLevelText();
         LocalizationManager.LocalizationChanged += ChangeLevelText;
+        ChangeLevelText();
     }
 
     public void Win()
@@ -42,7 +39,7 @@ public class GameManager : MonoBehaviour
         OnWin.Invoke();
         int currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
         Progress.Instance.SetLevel(currentLevelIndex + 1);
-        ChangeLevelText();
+       // ChangeLevelText();
         Progress.Instance.AddCoins(50);
     }
 
