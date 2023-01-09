@@ -1,0 +1,25 @@
+Key,English,Russian
+Game.LevelText,Level {0:N1000},Уровень {0:N1000}
+Game.LevelComplete,"Level
+complete!","Уровень
+Пройден!"
+Game.Name,Balls 2048,Шарики 2048
+Game.Goal,Goal,Цель
+Game.Continue,Continue,Дальше
+Game.Over,"The moves
+are over!","Ходы
+закончились!"
+Game.Balls, +5 balls, +5 шаров
+Game.Save,Saves,Сохранения
+Game.Music,Music,Музыка
+Game.Sound,Sound Effects,Звуковые Эффекты
+Game.Reset,Reset Progress?,"Сбросить
+прогресс?"
+Game.End,"Congratulations, 
+you have passed 
+the game! 
+But you can always
+start over!","Поздравляем,
+вы прошли игру!
+Но вы всегда можете
+начать все сначала!"

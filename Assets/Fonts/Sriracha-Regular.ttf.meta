@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3287f245876aae8499131de241469ae2
+guid: 180431ad73669224ba46d3141065112f
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Multiround Pro
+  - Sriracha
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

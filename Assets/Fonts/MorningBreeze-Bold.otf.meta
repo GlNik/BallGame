@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d1fe0bc1ac9782f4c8f875e1a7cea6d7
+guid: 2996aa5df8a85f940808ec4e0f982e18
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,10 +8,11 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Poppins
   fontNames:
-  - Poppins
-  fallbackFontReferences: []
+  - Morning Breeze
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: b0a017af1e5af2246a22d0df93ec7b88, type: 3}
+  - {fileID: 12800000, guid: d25edf9bc3876ae4fa5707920fa18c68, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

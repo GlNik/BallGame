@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -11,13 +9,13 @@ public struct Task
     public int Level;
 }
 
+
 public class Level : MonoBehaviour
 {
     public int NumberOfBalls = 50;
     public int MaxCreatedBallLevel = 1;
 
-    public Task[] Tasks;
-
+    public Task[] Tasks;   
     public static Level Instance { get; private set; }
 
     private void Awake()
